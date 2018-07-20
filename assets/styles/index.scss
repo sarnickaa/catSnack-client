@@ -1,2 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.login-form-class,
+.register-form-class,
+.change-pw-class,
+.logout-form-class {
+  padding: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 1em;
+  font-family: helvetica;
+}
+
+.logout-form-class {
+  display: none;
+}

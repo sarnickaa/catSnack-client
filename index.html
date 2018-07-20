@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <form id="register-form" class="register-form-class">
+    <legend>Register for catSnack</legend>
+    <input id="email-register" name="credentials[email]" type="text" size="40" placeholder="your@email.com">
+    <br />
+    <input id="pw-register" name="credentials[password]" type="password" placeholder="password">
+    <input id="pwconf-register" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+    <br />
+    <button id="register" type="submit">Register</button>
+  </form>
+
+  <form id="log-in-form" class="login-form-class">
+    <legend>Log in to catSnack</legend>
+    <input id="email-login" name="credentials[email]" type="text" size="40" placeholder="your@email.com">
+    <br />
+    <input id="pw-login" name="credentials[password]" type="password" placeholder="password">
+    <br />
+    <button id="login" type="submit">Log in</button>
+  </form>
+
+  <form id="change-pw-form" class="change-pw-class">
+    <input id="pw-change" name="passwords[old]" type="password" placeholder="old password">
+    <input id="pw-change-conf" name="passwords[new]" type="password" placeholder="new password">
+    <button id="pw-change-submit" type="submit">Change Password</button>
+  </form>
+
+  <form id="logout-form" class="logout-form-class">
+    <button id="logoutbutton" type="submit">Logout</button>
+  </form>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal end -->
+
+</body>
+
 </html>

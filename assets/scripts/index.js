@@ -5,7 +5,13 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const events = require('./events.js')
+// const ui = require('./ui.js')
 
 $(() => {
-  // your JS code goes here
-})
+    $("#log-in-form").on("submit", events.userLogin)
+    $("#register-form").on("submit", events.userRegister)
+    // $("#loginForm").on("submit", api.userLogin)
+    $("#change-pw-form").on("submit", events.userPwChange)
+    $("#logoutform").on("submit", events.userLogout)
+  })
