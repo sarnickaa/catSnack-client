@@ -55,10 +55,60 @@ const createNewPet = function(data) {
   })
 }
 
+const getUserPets = function() {
+  return $.ajax({
+    url: config.apiUrl + '/pets',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getOnePet = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/pets/' + data.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteOnePet = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/pets/' + data.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateOnePet = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/pets/' + data.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      "pet": {
+        "name": `${data.name}`,
+        "age": `${data.age}`
+      }
+    }
+  })
+}
+
 module.exports = {
   register,
   login,
   pwChange,
   logout,
-  createNewPet
+  createNewPet,
+  getUserPets,
+  getOnePet,
+  deleteOnePet,
+  updateOnePet
 }

@@ -48,10 +48,52 @@ const userLogout = function(event) {
       $("#create-pet")[0].reset()
   }
 
+  const seeUserPets = function(event) {
+    event.preventDefault()
+    api.getUserPets()
+      .then(ui.onGetPetSuccess)
+      .catch(ui.getPetError)
+  }
+
+  const seeOnePet = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    api.getOnePet(data)
+      .then(ui.onGetOnePetSuccess)
+      .catch(ui.getOnePetError)
+    $("#see-one-pet")[0].reset()
+  }
+
+  const deletePet = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    api.deleteOnePet(data)
+      .then(ui.onDeletePetSuccess)
+      .catch(ui.deletePetError)
+    $("#delete-pet")[0].reset()
+  }
+
+  const updatePet = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    api.updateOnePet(data)
+      .then(ui.onUpdateSuccess)
+      .catch(ui.updateError)
+    $("#update-pet")[0].reset()
+  }
+
+
 module.exports = {
   userLogin,
   userRegister,
   userPwChange,
   userLogout,
-  createPet
+  createPet,
+  seeUserPets,
+  seeOnePet,
+  deletePet,
+  updatePet
 }

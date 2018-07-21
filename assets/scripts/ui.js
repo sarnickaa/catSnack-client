@@ -124,9 +124,9 @@ const onCreatePetSuccess = function(data) {
   $("#myModalLabel").html('Pet Created')
   const scoreHTML = (`
         <h4>Meow! You Have A New Friend!</h4>
-        <p>Pet ID: ${data.pet.id}</p>
-        <p>Pet Name: ${data.pet.name}</p>
-        <p>Pet Age: ${data.pet.age}</p>
+        <p>Pet ID: ${store.pet.id}</p>
+        <p>Name: ${store.pet.name}</p>
+        <p>Age: ${store.pet.age}</p>
         <br>
       `)
   $(".modal-body").html(scoreHTML)
@@ -147,6 +147,116 @@ const onCreatePetError = function(error) {
   }
 }
 
+const onGetPetSuccess = function(data) {
+  $('.modal-body').html('')
+  $("#myModalLabel").html('My Pets')
+  data.pets.forEach(function(pet) {
+    const petHTML = (`
+        <p>Name: ${pet.name}</p>
+        <p>Pet ID: ${pet.id}</p>
+        <p>Age: ${pet.age}</p>
+        <br>
+      `)
+    $(".modal-body").append(petHTML)
+  })
+  $("#myModal").modal('show')
+}
+
+const getPetError = function(error) {
+  if (error) {
+    $('.modal-body').html('')
+    $("#myModalLabel").html('ERROR')
+    const scoreHTML = (`
+        <h4>Oh Oh! Something Went Wrong!</h4>
+        <p>Check Your Internet Connection</p>
+        <br>
+      `)
+    $(".modal-body").html(scoreHTML)
+    $("#myModal").modal('show')
+  }
+}
+
+const onGetOnePetSuccess = function(data) {
+  $('.modal-body').html('')
+  $("#myModalLabel").html('My Pets')
+    const petHTML = (`
+        <p>Name: ${data.pet.name}</p>
+        <p>Pet ID: ${data.pet.id}</p>
+        <p>Age: ${data.pet.age}</p>
+        <br>
+      `)
+    $(".modal-body").html(petHTML)
+  $("#myModal").modal('show')
+}
+
+const getOnePetError = function(error) {
+  if (error) {
+    $('.modal-body').html('')
+    $("#myModalLabel").html('ERROR')
+    const scoreHTML = (`
+        <h4>Oh Oh! Something Went Wrong!</h4>
+        <p>Check Your Internet Connection</p>
+        <br>
+      `)
+    $(".modal-body").html(scoreHTML)
+    $("#myModal").modal('show')
+  }
+}
+
+const onDeletePetSuccess = function(data) {
+  $('.modal-body').html('')
+  $("#myModalLabel").html('Pet Removed')
+    const petHTML = (`
+        <p>Pet removed from your list!</p>
+        <br>
+      `)
+    $(".modal-body").html(petHTML)
+  $("#myModal").modal('show')
+}
+
+const deletePetError = function(error) {
+  if (error) {
+    $('.modal-body').html('')
+    $("#myModalLabel").html('ERROR')
+    const scoreHTML = (`
+        <h4>Oh Oh! Something Went Wrong!</h4>
+        <p>Check Your Internet Connection</p>
+        <br>
+      `)
+    $(".modal-body").html(scoreHTML)
+    $("#myModal").modal('show')
+  }
+}
+
+const onUpdateSuccess = function(data) {
+  store.pet = data.pet
+  console.log(data.pet)
+  $('.modal-body').html('')
+  $("#myModalLabel").html('Pet Updated')
+  const scoreHTML = (`
+        <h4>Meow! Your pets details have been updated!</h4>
+        <p>Pet ID: ${store.pet.id}</p>
+        <p>Name: ${store.pet.name}</p>
+        <p>Age: ${store.pet.age}</p>
+        <br>
+      `)
+  $(".modal-body").html(scoreHTML)
+  $("#myModal").modal('show')
+}
+
+const updateError = function(error) {
+  if (error) {
+    $('.modal-body').html('')
+    $("#myModalLabel").html('ERROR')
+    const scoreHTML = (`
+        <h4>Oh Oh! Something Went Wrong!</h4>
+        <p>Check Your Internet Connection</p>
+        <br>
+      `)
+    $(".modal-body").html(scoreHTML)
+    $("#myModal").modal('show')
+  }
+}
 
 module.exports = {
   onRegisterSuccess,
@@ -157,5 +267,13 @@ module.exports = {
   logoutError,
   loginError,
   registerError,
-  onCreatePetSuccess
+  onCreatePetSuccess,
+  getPetError,
+  onGetPetSuccess,
+  onGetOnePetSuccess,
+  getOnePetError,
+  onDeletePetSuccess,
+  deletePetError,
+  onUpdateSuccess,
+  updateError
 }
