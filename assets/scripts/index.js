@@ -14,4 +14,5 @@ $(() => {
     // $("#loginForm").on("submit", api.userLogin)
     $("#change-pw-form").on("submit", events.userPwChange)
     $("#logoutform").on("submit", events.userLogout)
+    $("#create-pet").on("submit", events.createPet)
   })

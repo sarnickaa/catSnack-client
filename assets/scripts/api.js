@@ -39,10 +39,26 @@ const logout = function() {
     }
   })
 }
+const createNewPet = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/pets',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      "pet": {
+        "name": `${data.name}`,
+        "age": `${data.age}`
+      }
+    }
+  })
+}
 
 module.exports = {
   register,
   login,
   pwChange,
-  logout
+  logout,
+  createNewPet
 }

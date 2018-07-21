@@ -37,9 +37,21 @@ const userLogout = function(event) {
     .catch(ui.logoutError)
   }
 
+  const createPet = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    // const pet = data.pet
+    api.createNewPet(data)
+      .then(ui.onCreatePetSuccess)
+      .catch(ui.createPetError)
+      $("#create-pet")[0].reset()
+  }
+
 module.exports = {
   userLogin,
   userRegister,
   userPwChange,
-  userLogout
+  userLogout,
+  createPet
 }

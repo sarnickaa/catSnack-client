@@ -11,7 +11,11 @@ const onLoginSuccess = function(data) {
     `)
   $(".modal-body").html(scoreHTML)
   $("#myModal").modal('show')
-  $(".login").css("display", "none")
+  $("#log-in-form").css("display", "none")
+  $("#register-form").css("display", "none")
+  $("#logout-form").css("display", "block")
+  $("#change-pw-form").css("display", "block")
+  $(".pets-class").css("display", "block")
   store.user = data.user
   }
 
@@ -92,6 +96,11 @@ const onLogoutSuccess = function() {
   `)
   $(".modal-body").html(message)
   $("#myModal").modal('show')
+  $("#log-in-form").css("display", "block")
+  $("#register-form").css("display", "block")
+  $("#logout-form").css("display", "none")
+  $("#change-pw-form").css("display", "none")
+  $(".pets-class").css("display", "none")
 }
 
 const logoutError = function(error) {
@@ -108,6 +117,36 @@ const logoutError = function(error) {
   }
 }
 
+const onCreatePetSuccess = function(data) {
+  store.pet = data.pet
+  console.log(data.pet)
+  $('.modal-body').html('')
+  $("#myModalLabel").html('Pet Created')
+  const scoreHTML = (`
+        <h4>Meow! You Have A New Friend!</h4>
+        <p>Pet ID: ${data.pet.id}</p>
+        <p>Pet Name: ${data.pet.name}</p>
+        <p>Pet Age: ${data.pet.age}</p>
+        <br>
+      `)
+  $(".modal-body").html(scoreHTML)
+  $("#myModal").modal('show')
+}
+
+const onCreatePetError = function(error) {
+  if (error) {
+    $('.modal-body').html('')
+    $("#myModalLabel").html('ERROR')
+    const scoreHTML = (`
+        <h4>Oh Oh! Something Went Wrong!</h4>
+        <p>Check Your Internet Connection</p>
+        <br>
+      `)
+    $(".modal-body").html(scoreHTML)
+    $("#myModal").modal('show')
+  }
+}
+
 
 module.exports = {
   onRegisterSuccess,
@@ -117,5 +156,6 @@ module.exports = {
   onLogoutSuccess,
   logoutError,
   loginError,
-  registerError
+  registerError,
+  onCreatePetSuccess
 }
