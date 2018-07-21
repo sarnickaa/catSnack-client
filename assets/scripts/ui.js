@@ -16,6 +16,7 @@ const onLoginSuccess = function(data) {
   $("#logout-form").css("display", "block")
   $("#change-pw-form").css("display", "block")
   $(".pets-class").css("display", "block")
+  $(".foods-class").css("display", "block")
   store.user = data.user
   }
 
@@ -101,6 +102,7 @@ const onLogoutSuccess = function() {
   $("#logout-form").css("display", "none")
   $("#change-pw-form").css("display", "none")
   $(".pets-class").css("display", "none")
+  $(".foods-class").css("display", "none")
 }
 
 const logoutError = function(error) {
@@ -258,6 +260,40 @@ const updateError = function(error) {
   }
 }
 
+const onCreateFoodSuccess = function(data) {
+  store.food = data.food
+  console.log(data.food)
+  $('.modal-body').html('')
+  $("#myModalLabel").html('Pet Created')
+  const scoreHTML = (`
+        <h4>Yum! Your Pet has logged a new food!</h4>
+        <p>Food for: ${store.food.pet.name}</p>
+        <p>Brand: ${store.food.brand_name}</p>
+        <p>Main Ingredient: ${store.food.main_ingredient}</p>
+        <p>also contains ${store.food.secondary_ingredient}<p>
+        <p>Pet's score for food: ${store.food.score}/10</p>
+        <br>
+      `)
+  $(".modal-body").html(scoreHTML)
+  $("#myModal").modal('show')
+}
+
+const createFoodError = function(error) {
+  if (error) {
+    $('.modal-body').html('')
+    $("#myModalLabel").html('ERROR')
+    const scoreHTML = (`
+        <h4>Oh Oh! Something Went Wrong!</h4>
+        <p>Check Your Internet Connection</p>
+        <br>
+      `)
+    $(".modal-body").html(scoreHTML)
+    $("#myModal").modal('show')
+  }
+}
+
+
+
 module.exports = {
   onRegisterSuccess,
   onLoginSuccess,
@@ -275,5 +311,7 @@ module.exports = {
   onDeletePetSuccess,
   deletePetError,
   onUpdateSuccess,
-  updateError
+  updateError,
+  onCreateFoodSuccess,
+  createFoodError
 }

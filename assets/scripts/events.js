@@ -85,6 +85,17 @@ const userLogout = function(event) {
     $("#update-pet")[0].reset()
   }
 
+  const createFood = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    // const pet = data.pet
+    api.createNewFood(data)
+      .then(ui.onCreateFoodSuccess)
+      .catch(ui.createFoodError)
+      $("#create-food")[0].reset()
+  }
+
 
 module.exports = {
   userLogin,
@@ -95,5 +106,6 @@ module.exports = {
   seeUserPets,
   seeOnePet,
   deletePet,
-  updatePet
+  updatePet,
+  createFood
 }

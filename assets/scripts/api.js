@@ -101,6 +101,25 @@ const updateOnePet = function(data) {
   })
 }
 
+const createNewFood = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/foods',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      "food": {
+        "brand_name": `${data.brand_name}`,
+        "main_ingredient": `${data.main_ingredient}`,
+        "secondary_ingredient": `${data.secondary_ingredient}`,
+        "pet_id": `${data.pet_id}`,
+        "score": `${data.score}`
+      }
+    }
+  })
+}
+
 module.exports = {
   register,
   login,
@@ -110,5 +129,6 @@ module.exports = {
   getUserPets,
   getOnePet,
   deleteOnePet,
-  updateOnePet
+  updateOnePet,
+  createNewFood
 }
