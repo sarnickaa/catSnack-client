@@ -1,32 +1,75 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.login-form-class,
-.register-form-class,
-.change-pw-class,
-.logout-form-class,
-.pets-class {
-  padding: 5px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+// .login-form-class,
+// .register-form-class,
+// .change-pw-class,
+// .logout-form-class,
+body, html {
+  height: 100%;
+}
+.dashboard,
+.pets-class,
+.foods-class {
   font-size: 1em;
   font-family: helvetica;
 }
 
-.logout-form-class {
-  display: none;
+.user-dash {
+
 }
 
-.change-pw-class {
+
+
+// .logout-form-class {
+//   display: none;
+// }
+//
+// .change-pw-class {
+//   display: none;
+// }
+
+.user-dash {
   display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: center;
+  height: 10%;
+  // width: 100%;
+  background-color:#009900;
+}
+
+.in-user-dash-logout {
+  margin-left: auto;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.in-user-dash {
+  padding: 5%;
+  box-sizing: border-box;
 }
 
 .pets-class,
 .foods-class {
+  height: 45%;
   display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: pink;
 }
 
 .division {
-  float: left;
-  width: 25%;
+  padding: 5%;
+  box-sizing: border-box;
 }
+// .create-pet-class,
+// .see-one-pet-class,
+// .see-pets-class,
+// .delete-pet-class,
+// .update-pet-class {
+//   display: block;
+// }

@@ -96,6 +96,42 @@ const userLogout = function(event) {
       $("#create-food")[0].reset()
   }
 
+  const seeUserFoods = function(event) {
+    event.preventDefault()
+    api.getUserFoods()
+      .then(ui.onGetFoodsSuccess)
+      .catch(ui.getFoodsError)
+  }
+
+  const seeOneFood = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    api.getOneFood(data)
+      .then(ui.onGetOneFoodSuccess)
+      .catch(ui.getOneFoodError)
+    $("#see-one-food")[0].reset()
+  }
+
+  const deleteFood = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    api.deleteOneFood(data)
+      .then(ui.onDeleteFoodSuccess)
+      .catch(ui.deleteFoodError)
+    $("#delete-food")[0].reset()
+  }
+
+  const updateFood = function(event) {
+    event.preventDefault()
+    const data = getFormFields(this)
+    console.log(data)
+    api.updateOneFood(data)
+      .then(ui.onUpdateFoodSuccess)
+      .catch(ui.updateFoodError)
+    $("#update-food")[0].reset()
+  }
 
 module.exports = {
   userLogin,
@@ -107,5 +143,9 @@ module.exports = {
   seeOnePet,
   deletePet,
   updatePet,
-  createFood
+  createFood,
+  seeUserFoods,
+  seeOneFood,
+  deleteFood,
+  updateFood
 }

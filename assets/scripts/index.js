@@ -19,4 +19,8 @@ $(() => {
     $("#delete-pet").on("submit", events.deletePet)
     $("#update-pet").on("submit", events.updatePet)
     $("#create-food").on("submit", events.createFood)
+    $("#see-foods").on("submit", events.seeUserFoods)
+    $("#see-one-food").on("submit", events.seeOneFood)
+    $("#delete-food").on("submit", events.deleteFood)
+    $("#update-food").on("submit", events.updateFood)
   })

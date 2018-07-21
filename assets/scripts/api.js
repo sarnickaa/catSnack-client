@@ -120,6 +120,54 @@ const createNewFood = function(data) {
   })
 }
 
+const getUserFoods = function() {
+  return $.ajax({
+    url: config.apiUrl + '/foods',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getOneFood = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/foods/' + data.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteOneFood = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/foods/' + data.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateOneFood = function(data) {
+  return $.ajax({
+    url: config.apiUrl + '/foods/' + data.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      "food": {
+        "brand_name": `${data.brand_name}`,
+        "main_ingredient": `${data.main_ingredient}`,
+        "secondary_ingredient": `${data.secondary_ingredient}`,
+        "score": `${data.score}`
+      }
+    }
+  })
+}
+
 module.exports = {
   register,
   login,
@@ -130,5 +178,9 @@ module.exports = {
   getOnePet,
   deleteOnePet,
   updateOnePet,
-  createNewFood
+  createNewFood,
+  getUserFoods,
+  getOneFood,
+  deleteOneFood,
+  updateOneFood
 }
