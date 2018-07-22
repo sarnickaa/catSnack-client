@@ -24,8 +24,8 @@ body, html {
 button {
   background-color: #d6d521; /* Green */
   border: none;
-  color: #33322f;
-  padding: 5px 10px;
+  color: #1c1c1b;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -39,7 +39,7 @@ input[type=text] {
   box-sizing: border-box;
   margin: 5px;
   border-radius: 3px;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   // cursor: pointer;
   // font-size: 2.5em;
   // font-family: 'Monoton', cursive;
@@ -50,7 +50,7 @@ input[type=password] {
   box-sizing: border-box;
   margin: 5px;
   border-radius: 3px;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   // cursor: pointer;
   // font-size: 2.5em;
   // font-family: 'Monoton', cursive;
@@ -85,22 +85,59 @@ img {
   align-items: center;
   height: 10%;
   // width: 100%;
-  background-color:#009900;
+  background-color: #d6d521;
   padding: 5%;
 }
 
-.in-user-dash-logout {
+#logoutbutton {
+  background-color: #1c1c1b;
+  border: none;
+  color: #d6d521;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2%;
   margin-left: auto;
-  // padding: 5%;
-  // box-sizing: border-box;
-  z-index: 1;
 }
+
+#logout-form {
+  width: 70px;
+  margin-left: auto;
+  display: inline;
+}
+
+#change-pw-form {
+  margin-right: auto;
+  display: inline;
+}
+#pw-change-submit {
+  background-color: #1c1c1b;
+  border: none;
+  color: #d6d521;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2%;
+  margin-right: auto;
+}
+
+
+
+// .in-user-dash-logout {
+//
+//   width: 30px;
+//   // padding: 5%;
+//   // box-sizing: border-box;
+//   z-index: 1;
+// }
 
 legend {
   color: #d6d521;
   text-align: center;
   font-weight: bold;
-  background-color: #33322f;
+  background-color: #1c1c1b;
   padding: 5px;
 }
 
@@ -132,10 +169,13 @@ legend {
 }
 
 .pets-class {
-  background: pink;
+  background-image: url('https://previews.123rf.com/images/ccat82/ccat821204/ccat82120400029/13092255-gray-fur-for-background-usage.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 .foods-class {
-  background: blue;
+  background: #1c1c1b;
 }
 .division {
   padding: 5%;
