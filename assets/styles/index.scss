@@ -7,6 +7,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // .logout-form-class,
 body, html {
   height: 100%;
+  // overflow: hidden;
+  // margin: 0;
+  background-image: url('https://newevolutiondesigns.com/images/freebies/black-white-background-4.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 .dashboard,
 .pets-class,
@@ -15,7 +21,49 @@ body, html {
   font-family: helvetica;
 }
 
-.user-dash {
+button {
+  background-color: #d6d521; /* Green */
+  border: none;
+  color: #33322f;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  // font-size: 16px;
+  margin: 2%;
+
+}
+
+input[type=text] {
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  // cursor: pointer;
+  // font-size: 2.5em;
+  // font-family: 'Monoton', cursive;
+}
+
+input[type=password] {
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  // cursor: pointer;
+  // font-size: 2.5em;
+  // font-family: 'Monoton', cursive;
+}
+
+img {
+  // width: 100%;
+  // height: auto;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -32,39 +80,68 @@ body, html {
 .user-dash {
   display: none;
   flex-direction: row;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: right;
   align-items: center;
   height: 10%;
   // width: 100%;
   background-color:#009900;
+  padding: 5%;
 }
 
 .in-user-dash-logout {
   margin-left: auto;
-  padding: 5%;
-  box-sizing: border-box;
+  // padding: 5%;
+  // box-sizing: border-box;
+  z-index: 1;
 }
 
-.in-user-dash {
-  padding: 5%;
-  box-sizing: border-box;
+legend {
+  color: #d6d521;
+  text-align: center;
+  font-weight: bold;
+  background-color: #33322f;
+  padding: 5px;
 }
+
+
+//
+// .pets-foods-container {
+//   display: none;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   background: pink;
+// }
 
 .pets-class,
 .foods-class {
-  height: 45%;
+  height: 50%;
   display: none;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: pink;
+  flex-wrap: wrap;
+  // background: pink;
+  // flex: 1;
+  // flex-direction: row;
+
+  // justify-content: center;
+  // align-items: center;
 }
 
+.pets-class {
+  background: pink;
+}
+.foods-class {
+  background: blue;
+}
 .division {
   padding: 5%;
   box-sizing: border-box;
+  // justify-content: center;
+  // align-items: center;
 }
 // .create-pet-class,
 // .see-one-pet-class,
@@ -73,3 +150,13 @@ body, html {
 // .update-pet-class {
 //   display: block;
 // }
+.register-form-class {
+  float: left;
+  padding: 2%;
+  margin-left: 10%;
+}
+.login-form-class {
+  float: right;
+  padding: 2%;
+  margin-right: 10%;
+}

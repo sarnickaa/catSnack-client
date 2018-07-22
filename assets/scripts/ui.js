@@ -19,6 +19,8 @@ const onLoginSuccess = function(data) {
   $(".user-dash").css("display", "flex")
   $(".pets-class").css("display", "flex")
   $(".foods-class").css("display", "flex")
+  $("#image").css("display", "none")
+  // $(".pets-foods-container").css("display", "flex")
   store.user = data.user
   }
 
@@ -106,6 +108,8 @@ const onLogoutSuccess = function() {
   $(".user-dash").css("display", "none")
   $(".pets-class").css("display", "none")
   $(".foods-class").css("display", "none")
+  $("#image").css("display", "block")
+  // $(".pets-foods-container").css("display", "none")
 }
 
 const logoutError = function(error) {
