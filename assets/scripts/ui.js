@@ -12,6 +12,7 @@ const onLoginSuccess = function(data) {
   $(".modal-body").html(scoreHTML)
   $("#myModal").modal('show')
   $(".form2").css("display", "none")
+  $(".form1").css("display", "none")
   $(".user-dash").css("display", "flex")
   $(".pets-class").css("display", "flex")
   $(".foods-class").css("display", "flex")
