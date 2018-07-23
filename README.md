@@ -1,28 +1,56 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+Rails[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+# deployed site front-end:
 
+### repository front-end:
+https://github.com/sarnickaa/catSnack-client
 
+# deployed site back-end:
 
-## Installation
+### repository back-end:
+https://github.com/sarnickaa/catSnack
 
+## Description:
 
+catSnack is a pet-food preference tracker for pet owners.
 
-## Structure
+Keeping tabs on the type of food a pet prefers is difficult especially if pet preferences change over time. Pet food purchases are usually made in bulk quantities meaning that accidentally buying the wrong type of food for a picky pet means wasted time, money and an unhappy critter.
 
+Healthy pets should be given a variety of foods to prevent nutritional deficits (or overloads) and to maintain interest and quality of life. Keeping an easily accessible/updatable list of a pets food preferences will mean owners can be sure they're purchasing food their pet will
 
+ a. actually like and eat (no wasted money/food or time)
 
-## Tasks
+ b. allow owners to monitor their pets dietary profile and make adjustments as they deem necessary (i.e. does Abby eat too much tuna-based food? does she hate lamb? does she like tuna+duck but won't touch tuna+shrimp?)
 
+This is an app for pet owners of one or more pets. The 1st iteration will be for cats only but it can be expanded to multiple types of pets. (rename: petSnack)
 
+## Wireframes:
+![wireframes](https://media.git.generalassemb.ly/user/11649/files/5da52fc6-8e5c-11e8-922b-cce645fdaf21)
 
-## Additional Resources
+## Technologies used:
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+  API:    Ruby on Rails
+  Client: JavaScript
+          CSS
+          HTML5
 
-## [License](LICENSE)
+## Future Iterations:
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+I would like to look into the Amazon API to see if there's a way I can pull customer reviews for the brands of food users log.
+
+I would also like to spend some time trying to make my UI interface mobile-responsive. The main point of this app is that it is a handy on-the-go means by which pet owners can log food for their pets and that means a mobile interface will be necessary.
+
+I would also like to explore the possibility of a search function to help users access relevant data quickly and in a very specific manner.
+
+### Planning:
+
+My planning process mirrored the suggested schedule closely. The issue queue was instrumental in helping me work through roadblocks as was talking through issues with colleagues.
+
+My process relied on building the API first, testing functionality with curl scripts and then building a UI around that.
+
+My main concerns with this project were:
+1. linking the backend to a usable/attractive UI.
+2. being able to effectively target and filter data for specific users through CRUD actions.
+3. building data relationships that made sense for a user.
+
+Building the UI was more difficult than expected as my interface required the management of a number of forms and text-input fields which turned out to be hard to manipulate effectively with raw CSS. As a result of this experience, i want to spend more time learning front end frameworks like handlebars and methods like SASS to make this process easier and cleaner. At present, i don't feel confident enough with either to implement them given a short project deadline.
