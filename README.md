@@ -1,11 +1,13 @@
 Rails[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# deployed site front-end:
+### deployed site front-end:
+https://sarnickaa.github.io/catSnack-client/
 
 ### repository front-end:
 https://github.com/sarnickaa/catSnack-client
 
-# deployed site back-end:
+### deployed site back-end:
+https://sarnickaa.github.io/catSnack-client/
 
 ### repository back-end:
 https://github.com/sarnickaa/catSnack
@@ -40,7 +42,7 @@ I would like to look into the Amazon API to see if there's a way I can pull cust
 
 I would also like to spend some time trying to make my UI interface mobile-responsive. The main point of this app is that it is a handy on-the-go means by which pet owners can log food for their pets and that means a mobile interface will be necessary.
 
-I would also like to explore the possibility of a search function to help users access relevant data quickly and in a very specific manner.
+I would also like to explore the possibility of a search function to help users access relevant data quickly and in a  specific manner.
 
 ### Planning:
 
