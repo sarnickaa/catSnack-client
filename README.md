@@ -26,6 +26,24 @@ Healthy pets should be given a variety of foods to prevent nutritional deficits 
 
 This is an app for pet owners of one or more pets. The 1st iteration will be for cats only but it can be expanded to multiple types of pets. (rename: petSnack)
 
+## How it works:
+
+The user can:
+- register with email & password
+- sign in with email & password
+- create a pet or pets
+- view owned pet/pets
+- view specific pet by ID
+- delete pet by ID
+- Update pet by ID
+- create a food item and assign it to a specific pet by ID
+- view all food items created
+- view a specific food item by ID
+- delete food by ID
+- Update food by ID
+- change password
+- logout
+
 ## Wireframes:
 ![wireframes](https://media.git.generalassemb.ly/user/11649/files/5da52fc6-8e5c-11e8-922b-cce645fdaf21)
 
