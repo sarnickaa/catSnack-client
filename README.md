@@ -7,7 +7,7 @@ https://sarnickaa.github.io/catSnack-client/
 https://github.com/sarnickaa/catSnack-client
 
 ### deployed site back-end:
-https://sarnickaa.github.io/catSnack-client/
+https://cat-snack.herokuapp.com/
 
 ### repository back-end:
 https://github.com/sarnickaa/catSnack
