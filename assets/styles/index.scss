@@ -1,37 +1,31 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// .login-form-class,
-// .register-form-class,
-// .change-pw-class,
-// .logout-form-class,
-body, html {
+body,
+html {
   height: 100%;
-  // overflow: hidden;
-  // margin: 0;
-  background-image: url('https://newevolutiondesigns.com/images/freebies/black-white-background-4.jpg');
+  background-image: url("https://newevolutiondesigns.com/images/freebies/black-white-background-4.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
+
 .dashboard,
-.pets-class,
-.foods-class {
+.foods-class,
+.pets-class {
   font-size: 1em;
   font-family: helvetica;
 }
 
 button {
-  background-color: #d6d521; /* Green */
+  background-color: #d6d521;
   border: none;
   color: #1c1c1b;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  // font-size: 16px;
   margin: 2%;
-
 }
 
 input[type=text] {
@@ -39,10 +33,7 @@ input[type=text] {
   box-sizing: border-box;
   margin: 5px;
   border-radius: 3px;
-  border: 0px solid #ccc;
-  // cursor: pointer;
-  // font-size: 2.5em;
-  // font-family: 'Monoton', cursive;
+  border: 0 solid #ccc;
 }
 
 input[type=password] {
@@ -50,41 +41,23 @@ input[type=password] {
   box-sizing: border-box;
   margin: 5px;
   border-radius: 3px;
-  border: 0px solid #ccc;
-  // cursor: pointer;
-  // font-size: 2.5em;
-  // font-family: 'Monoton', cursive;
+  border: 0 solid #ccc;
 }
 
 img {
-  // width: 100%;
-  // height: auto;
-  margin-top: 5%;
-  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-bottom: 5%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
-
-
-
-// .logout-form-class {
-//   display: none;
-// }
-//
-// .change-pw-class {
-//   display: none;
-// }
 
 .user-dash {
   display: none;
   flex-direction: row;
-  // flex-wrap: wrap;
   justify-content: right;
   align-items: center;
   height: 10%;
-  // width: 100%;
   background-color: #d6d521;
   padding: 5%;
 }
@@ -97,8 +70,7 @@ img {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 2%;
-  margin-left: auto;
+  margin: 2% 2% 2% auto;
 }
 
 #logout-form {
@@ -111,6 +83,7 @@ img {
   margin-right: auto;
   display: inline;
 }
+
 #pw-change-submit {
   background-color: #1c1c1b;
   border: none;
@@ -119,19 +92,8 @@ img {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 2%;
-  margin-right: auto;
+  margin: 2% auto 2% 2%;
 }
-
-
-
-// .in-user-dash-logout {
-//
-//   width: 30px;
-//   // padding: 5%;
-//   // box-sizing: border-box;
-//   z-index: 1;
-// }
 
 legend {
   color: #d6d521;
@@ -141,62 +103,35 @@ legend {
   padding: 5px;
 }
 
-
-//
-// .pets-foods-container {
-//   display: none;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: wrap;
-//   background: pink;
-// }
-
-.pets-class,
-.foods-class {
+.foods-class,
+.pets-class {
   height: 50%;
   display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  // background: pink;
-  // flex: 1;
-  // flex-direction: row;
-
-  // justify-content: center;
-  // align-items: center;
 }
 
 .pets-class {
-  background-image: url('https://previews.123rf.com/images/ccat82/ccat821204/ccat82120400029/13092255-gray-fur-for-background-usage.jpg');
+  background-image: url("https://previews.123rf.com/images/ccat82/ccat821204/ccat82120400029/13092255-gray-fur-for-background-usage.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
+
 .foods-class {
   background: #1c1c1b;
 }
+
+.centered {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 .division {
   padding: 5%;
   box-sizing: border-box;
-  // justify-content: center;
-  // align-items: center;
-}
-// .create-pet-class,
-// .see-one-pet-class,
-// .see-pets-class,
-// .delete-pet-class,
-// .update-pet-class {
-//   display: block;
-// }
-.register-form-class {
-  float: left;
-  padding: 2%;
-  margin-left: 10%;
-}
-.login-form-class {
-  float: right;
-  padding: 2%;
-  margin-right: 10%;
 }

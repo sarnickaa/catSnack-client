@@ -1,7 +1,5 @@
 const config = require('./config.js')
 const store = require('./store.js')
-const ui = require('./ui.js')
-
 
 const register = function(data) {
   return $.ajax({

@@ -6,30 +6,25 @@ const onLoginSuccess = function(data) {
   $("#myModalLabel").html('Success!')
   const scoreHTML = (`
       <h4>User Logged In</h4>
-      <p>Click 'Create Saved Game' If You Want To Save Your Moves</p>
+      <p>Welcome to catSnack!</p>
       <br>
     `)
   $(".modal-body").html(scoreHTML)
   $("#myModal").modal('show')
-  $("#log-in-form").css("display", "none")
-  $("#register-form").css("display", "none")
-  // $(".dashboard").css("display", "flex")
-  // $("#change-pw-form").css("display", "block")
-  // $("#logout-form").css("display", "block")
+  $(".form2").css("display", "none")
   $(".user-dash").css("display", "flex")
   $(".pets-class").css("display", "flex")
   $(".foods-class").css("display", "flex")
   $("#image").css("display", "none")
-  // $(".pets-foods-container").css("display", "flex")
   store.user = data.user
-  }
+}
 
 const loginError = function(error) {
   $('.modal-body').html('')
-  $("#myModalLabel").html('ERROR')
+  $("#myModalLabel").html('Error')
   const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Try Logging In Again</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Try logging in again</p>
         <br>
       `)
   $(".modal-body").html(scoreHTML)
@@ -41,20 +36,21 @@ const onRegisterSuccess = function(data) {
   $("#myModalLabel").html('Success!')
   const scoreHTML = (`
       <h4>User Registered!</h4>
+      <p>Log in to enter catSnack!</p>
       <br>
     `)
   $(".modal-body").html(scoreHTML)
   $("#myModal").modal('show')
-  $("#register-form").css("display", "none")
+  $(".form1").css("display", "none")
 }
 
 const registerError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Try Registering Again</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Try registering again</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -76,10 +72,10 @@ const onPwSuccess = function() {
 const pwError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Try Entering Passwords Again</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Try entering passwords again</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -88,37 +84,30 @@ const pwError = function(error) {
 }
 
 const onLogoutSuccess = function() {
-  $(".scoreboard").css("display", "none")
-  $(".main-game").css("display", "none")
-  $(".login").css("display", "block")
-  $("#registerForm").css("display", "block")
-
   $('.modal-body').html('')
-  $("#myModalLabel").html('User Logged out')
+  $("#myModalLabel").html('Success!')
   const message = (`
-  <h4>User Logged out</h4>
-  <h3>Thanks For Playing TicTacToe!</h3>
+  <h4>User Logged out!</h4>
+  <h3>Meow! Come back soon!</h3>
   `)
   $(".modal-body").html(message)
   $("#myModal").modal('show')
-  $("#log-in-form").css("display", "block")
-  $("#register-form").css("display", "block")
-  // $("#logout-form").css("display", "none")
-  // $("#change-pw-form").css("display", "none")
+
   $(".user-dash").css("display", "none")
   $(".pets-class").css("display", "none")
   $(".foods-class").css("display", "none")
   $("#image").css("display", "block")
-  // $(".pets-foods-container").css("display", "none")
+  $(".form1").css("display", "flex")
+  $(".form2").css("display", "flex")
 }
 
 const logoutError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Try Logging Out Again</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Try logging out again</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -128,9 +117,8 @@ const logoutError = function(error) {
 
 const onCreatePetSuccess = function(data) {
   store.pet = data.pet
-  console.log(data.pet)
   $('.modal-body').html('')
-  $("#myModalLabel").html('Pet Created')
+  $("#myModalLabel").html('Pet Created!')
   const scoreHTML = (`
         <h4>Meow! You Have A New Friend!</h4>
         <p>Pet ID: ${store.pet.id}</p>
@@ -145,10 +133,10 @@ const onCreatePetSuccess = function(data) {
 const onCreatePetError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Try creating your pet again</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -158,7 +146,7 @@ const onCreatePetError = function(error) {
 
 const onGetPetSuccess = function(data) {
   $('.modal-body').html('')
-  $("#myModalLabel").html('My Pets')
+  $("#myModalLabel").html('My Pets!')
   data.pets.forEach(function(pet) {
     const petHTML = (`
         <p>Name: ${pet.name}</p>
@@ -174,10 +162,10 @@ const onGetPetSuccess = function(data) {
 const getPetError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Could not retrieve your pets</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -187,24 +175,24 @@ const getPetError = function(error) {
 
 const onGetOnePetSuccess = function(data) {
   $('.modal-body').html('')
-  $("#myModalLabel").html('My Pets')
-    const petHTML = (`
+  $("#myModalLabel").html('My Pet!')
+  const petHTML = (`
         <p>Name: ${data.pet.name}</p>
         <p>Pet ID: ${data.pet.id}</p>
         <p>Age: ${data.pet.age}</p>
         <br>
       `)
-    $(".modal-body").html(petHTML)
+  $(".modal-body").html(petHTML)
   $("#myModal").modal('show')
 }
 
 const getOnePetError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Could not retrieve your pet</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -214,22 +202,22 @@ const getOnePetError = function(error) {
 
 const onDeletePetSuccess = function(data) {
   $('.modal-body').html('')
-  $("#myModalLabel").html('Pet Removed')
-    const petHTML = (`
-        <p>Pet removed from your list!</p>
+  $("#myModalLabel").html('Pet Removed!')
+  const petHTML = (`
+        <p>Pet removed from your list</p>
         <br>
       `)
-    $(".modal-body").html(petHTML)
+  $(".modal-body").html(petHTML)
   $("#myModal").modal('show')
 }
 
 const deletePetError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Couled not remove your pet</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -239,9 +227,8 @@ const deletePetError = function(error) {
 
 const onUpdateSuccess = function(data) {
   store.pet = data.pet
-  console.log(data.pet)
   $('.modal-body').html('')
-  $("#myModalLabel").html('Pet Updated')
+  $("#myModalLabel").html('Pet Updated!')
   const scoreHTML = (`
         <h4>Meow! Your pets details have been updated!</h4>
         <p>Pet ID: ${store.pet.id}</p>
@@ -256,10 +243,10 @@ const onUpdateSuccess = function(data) {
 const updateError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Could not update your pet</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -269,9 +256,8 @@ const updateError = function(error) {
 
 const onCreateFoodSuccess = function(data) {
   store.food = data.food
-  console.log(data.food)
   $('.modal-body').html('')
-  $("#myModalLabel").html('Pet Created')
+  $("#myModalLabel").html('Food Created!')
   const scoreHTML = (`
         <h4>Yum! Your Pet has logged a new food!</h4>
         <p>Food for: ${store.food.pet.name}</p>
@@ -288,10 +274,10 @@ const onCreateFoodSuccess = function(data) {
 const createFoodError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Could not create a food for your pet</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -300,9 +286,8 @@ const createFoodError = function(error) {
 }
 
 const onGetFoodsSuccess = function(data) {
-  console.log(data)
   $('.modal-body').html('')
-  $("#myModalLabel").html('My Pets Foods')
+  $("#myModalLabel").html('My Pets Foods!')
   data.foods.forEach(function(food) {
     const petHTML = (`
         <p>ID: ${food.id}</p>
@@ -321,10 +306,10 @@ const onGetFoodsSuccess = function(data) {
 const getFoodsError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
         <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <p>Could not retrieve your pets foods</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -334,8 +319,8 @@ const getFoodsError = function(error) {
 
 const onGetOneFoodSuccess = function(data) {
   $('.modal-body').html('')
-  $("#myModalLabel").html('My Food')
-    const petHTML = (`
+  $("#myModalLabel").html('My Pets Food')
+  const petHTML = (`
       <p>ID: ${data.food.id}</p>
       <p>Brand: ${data.food.brand_name}</p>
       <p>Pet Name: ${data.food.pet.name}</p>
@@ -344,17 +329,17 @@ const onGetOneFoodSuccess = function(data) {
       <p>Pet's Score: ${data.food.score}/10</p>
         <br>
       `)
-    $(".modal-body").html(petHTML)
+  $(".modal-body").html(petHTML)
   $("#myModal").modal('show')
 }
 
 const getOneFoodError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Could not retrieve your pets food</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -364,22 +349,22 @@ const getOneFoodError = function(error) {
 
 const onDeleteFoodSuccess = function(data) {
   $('.modal-body').html('')
-  $("#myModalLabel").html('Food Removed')
-    const petHTML = (`
-        <p>Food removed from your list!</p>
+  $("#myModalLabel").html('Food Removed!')
+  const petHTML = (`
+        <p>A food has been removed from your list!</p>
         <br>
       `)
-    $(".modal-body").html(petHTML)
+  $(".modal-body").html(petHTML)
   $("#myModal").modal('show')
 }
 
 const deleteFoodError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Food could not be removed from your list</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
@@ -389,7 +374,6 @@ const deleteFoodError = function(error) {
 
 const onUpdateFoodSuccess = function(data) {
   store.food = data.food
-  console.log(data.food)
   $('.modal-body').html('')
   $("#myModalLabel").html('Food Updated')
   const scoreHTML = (`
@@ -408,10 +392,10 @@ const onUpdateFoodSuccess = function(data) {
 const updateFoodError = function(error) {
   if (error) {
     $('.modal-body').html('')
-    $("#myModalLabel").html('ERROR')
+    $("#myModalLabel").html('Error')
     const scoreHTML = (`
-        <h4>Oh Oh! Something Went Wrong!</h4>
-        <p>Check Your Internet Connection</p>
+        <h4>Oh no! Something Went Wrong!</h4>
+        <p>Could not update your food</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
