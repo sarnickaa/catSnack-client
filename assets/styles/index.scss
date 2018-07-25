@@ -55,6 +55,7 @@ img {
 .user-dash {
   display: none;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   height: 10%;
@@ -85,23 +86,15 @@ img {
 }
 
 #logout-form {
-  // width: 70px;
-  // margin-left: auto;
   display: inline;
 }
 
 #shelters {
-    // width: 70px;
-    // margin-left: auto;
-    // margin-right: auto;
-    // display: inline;
-    text-align: center;
+  text-align: center;
 }
 
-#change-pw-form {
-  // margin-right: auto;
-  // display: inline;
-}
+// #change-pw-form {
+// }
 
 #sheltersbutton {
   display: inline;

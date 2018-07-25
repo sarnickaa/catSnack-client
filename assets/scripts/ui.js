@@ -218,7 +218,7 @@ const deletePetError = function(error) {
     $("#myModalLabel").html('Error')
     const scoreHTML = (`
         <h4>Oh no! Something Went Wrong!</h4>
-        <p>Couled not remove your pet</p>
+        <p>Could not remove your pet</p>
         <br>
       `)
     $(".modal-body").html(scoreHTML)
