@@ -405,19 +405,19 @@ const updateFoodError = function(error) {
 }
 
 const onShelterSuccess = function(data) {
-  console.log('bleh', data)
-  // $('.modal-body').html('')
-  // $("#myModalLabel").html('My Pets!')
-  // data.pets.forEach(function(pet) {
-  //   const petHTML = (`
-  //       <p>Name: ${pet.name}</p>
-  //       <p>Pet ID: ${pet.id}</p>
-  //       <p>Age: ${pet.age}</p>
-  //       <br>
-  //     `)
-  //   $(".modal-body").append(petHTML)
-  // })
-  // $("#myModal").modal('show')
+  console.log('bleh', data.petfinder.shelters.shelter)
+  $('.modal-body').html('')
+  $("#myModalLabel").html('Shelters Near Me!')
+  data.petfinder.shelters.shelter.forEach(function(shelter) {
+    const shelterHTML = (`
+        <p>Name: ${shelter.name.$t}</p>
+        <p>Email: ${shelter.email.$t}</p>
+        <p>Phone: ${shelter.phone.$t}</p>
+        <br>
+      `)
+    $(".modal-body").append(shelterHTML)
+  })
+  $("#myModal").modal('show')
 }
 
 

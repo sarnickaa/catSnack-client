@@ -49,20 +49,27 @@
 
 
   <div class="user-dash">
-    <form id="change-pw-form" class="change-pw-class">
+    <div class="dashdiv">
+    <form id="change-pw-form" class="form-inline">
       <input id="pw-change" name="passwords[old]" type="password" placeholder="old password">
       <input id="pw-change-conf" name="passwords[new]" type="password" placeholder="new password">
       <button id="pw-change-submit" type="submit">Change Password</button>
     </form>
+  </div>
 
-    <form id="logout-form" class="logout-form-class">
-      <button id="logoutbutton" type="submit">Logout</button>
-    </form>
-
+<div class="dashdiv">
     <form id="shelters" class="shelters-search">
+      <legend>Get in touch with your local shelter</legend>
       <input id="see-shelters-id" name="location" type="text" placeholder="postcode">
       <button id="sheltersbutton" type="submit">Shelters near Me</button>
     </form>
+  </div>
+
+  <div class="dashdiv">
+    <form id="logout-form" class="logout-form-class">
+      <button id="logoutbutton" type="submit">Logout</button>
+    </form>
+  </div>
   </div>
 
   <div id="pets" class="pets-class" class="clearfix">

@@ -55,7 +55,7 @@ img {
 .user-dash {
   display: none;
   flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
   height: 10%;
   background-color: #d6d521;
@@ -73,14 +73,37 @@ img {
   margin: 2% 2% 2% auto;
 }
 
+#sheltersbutton {
+  background-color: #1c1c1b;
+  border: none;
+  color: #d6d521;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  margin: 2% 2% 2% auto;
+}
+
 #logout-form {
-  width: 70px;
-  margin-left: auto;
+  // width: 70px;
+  // margin-left: auto;
   display: inline;
 }
 
+#shelters {
+    // width: 70px;
+    // margin-left: auto;
+    // margin-right: auto;
+    // display: inline;
+    text-align: center;
+}
+
 #change-pw-form {
-  margin-right: auto;
+  // margin-right: auto;
+  // display: inline;
+}
+
+#sheltersbutton {
   display: inline;
 }
 
@@ -91,7 +114,7 @@ img {
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: inline;
   margin: 2% auto 2% 2%;
 }
 
