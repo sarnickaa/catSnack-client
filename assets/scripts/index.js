@@ -22,4 +22,5 @@ $(() => {
   $("#see-one-food").on("submit", events.seeOneFood)
   $("#delete-food").on("submit", events.deleteFood)
   $("#update-food").on("submit", events.updateFood)
+  $("#shelters").on("submit", events.seeShelters)
 })

@@ -123,6 +123,16 @@ const updateFood = function(event) {
   $("#update-food")[0].reset()
 }
 
+const seeShelters = function(event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  api.myShelters(data)
+    .then(ui.onShelterSuccess)
+    .catch(ui.ShelterError)
+  $("#shelters")[0].reset()
+}
+
 module.exports = {
   userLogin,
   userRegister,
@@ -137,5 +147,6 @@ module.exports = {
   seeUserFoods,
   seeOneFood,
   deleteFood,
-  updateFood
+  updateFood,
+  seeShelters
 }

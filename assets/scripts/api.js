@@ -166,6 +166,21 @@ const updateOneFood = function(data) {
   })
 }
 
+const myShelters = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/petfinder/' + data.location,
+    method: 'GET'
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
+  })
+}
+
+// curl "http://api.petfinder.com/shelter.find?key=4e7ed7382fc8429bc103b2e8a8d4e193&format=json&count=10&name=${NAME}&location=${ZIP}" \
+//   --include \
+//   --request GET \
+//   --header "Authorization: Token token=${TOKEN}" \
+
 module.exports = {
   register,
   login,
@@ -180,5 +195,6 @@ module.exports = {
   getUserFoods,
   getOneFood,
   deleteOneFood,
-  updateOneFood
+  updateOneFood,
+  myShelters
 }

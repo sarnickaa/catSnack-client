@@ -404,6 +404,22 @@ const updateFoodError = function(error) {
   }
 }
 
+const onShelterSuccess = function(data) {
+  console.log('bleh', data)
+  // $('.modal-body').html('')
+  // $("#myModalLabel").html('My Pets!')
+  // data.pets.forEach(function(pet) {
+  //   const petHTML = (`
+  //       <p>Name: ${pet.name}</p>
+  //       <p>Pet ID: ${pet.id}</p>
+  //       <p>Age: ${pet.age}</p>
+  //       <br>
+  //     `)
+  //   $(".modal-body").append(petHTML)
+  // })
+  // $("#myModal").modal('show')
+}
+
 
 module.exports = {
   onRegisterSuccess,
@@ -432,5 +448,6 @@ module.exports = {
   onDeleteFoodSuccess,
   deleteFoodError,
   onUpdateFoodSuccess,
-  updateFoodError
+  updateFoodError,
+  onShelterSuccess
 }
