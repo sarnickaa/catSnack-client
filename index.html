@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div id="image">
+    <img src="public/catSnackimg.png" width="300">
+  </div>
+
+<div class="centered">
+<div class="form1">
+
+  <form id="register-form" class="register-form-class">
+    <legend>Register for catSnack</legend>
+    <input id="email-register" name="credentials[email]" type="text" size="40" placeholder="your@email.com">
+    <br />
+    <input id="pw-register" name="credentials[password]" type="password" placeholder="password">
+    <input id="pwconf-register" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+    <br />
+    <button id="register" type="submit">Register</button>
+  </form>
+
+  </div>
+
+  <div class="form2">
+
+    <form id="log-in-form" class="login-form-class">
+      <legend>Log in to catSnack</legend>
+      <input id="email-login" name="credentials[email]" type="text" size="40" placeholder="your@email.com">
+      <br />
+      <input id="pw-login" name="credentials[password]" type="password" placeholder="password">
+      <br />
+      <button id="login" type="submit">Log in</button>
+    </form>
+
+  </div>
+</div>
+
+
+  <div class="user-dash">
+    <div class="dashdiv">
+    <form id="change-pw-form" class="form-inline">
+      <input id="pw-change" name="passwords[old]" type="password" placeholder="old password">
+      <input id="pw-change-conf" name="passwords[new]" type="password" placeholder="new password">
+      <button id="pw-change-submit" type="submit">Change Password</button>
+    </form>
+  </div>
+
+<div class="dashdiv">
+    <form id="shelters" class="shelters-search">
+      <legend>Get in touch with your local shelter</legend>
+      <input id="see-shelters-id" name="location" type="text" placeholder="postcode">
+      <button id="sheltersbutton" type="submit">Shelters near Me</button>
+    </form>
+  </div>
+
+  <div class="dashdiv">
+    <form id="logout-form" class="logout-form-class">
+      <button id="logoutbutton" type="submit">Logout</button>
+    </form>
+  </div>
+  </div>
+
+  <div id="pets" class="pets-class" class="clearfix">
+    <div class="division">
+      <form id="create-pet" class="create-pet-class">
+        <input id="cr-pet-name" name="name" type="text" placeholder="pet name">
+        <br />
+        <input id="cr-pet-age" name="age" type="text" placeholder="pet age">
+        <br />
+        <button id="cr-pet-submit" type="submit">Add Pet</button>
+      </form>
+    </div>
+
+
+    <div class="division">
+      <form id="see-pets" class="see-pets-class">
+        <button id="see-pets-button" type="submit">See My Pets</button>
+      </form>
+      <br />
+      <form id="see-one-pet" class="see-one-pet-class">
+        <input id="see-pet-id" name="id" type="text" placeholder="pet ID">
+        <br />
+        <button id="see-pet-button" type="submit">See One Pet</button>
+      </form>
+    </div>
+
+    <div class="division">
+      <form id="delete-pet" class="delete-pet-class">
+        <input id="del-pet-id" name="id" type="text" placeholder="pet ID">
+        <br />
+        <button id="del-pet-submit" type="submit">Remove</button>
+      </form>
+    </div>
+
+    <div class="division">
+      <form id="update-pet" class="update-pet-class">
+        <input id="up-pet-id" name="id" type="text" placeholder="pet ID">
+        <br />
+        <input id="up-pet-name" name="name" type="text" placeholder="pet name">
+        <br />
+        <input id="up-pet-age" name="age" type="text" placeholder="pet age">
+        <br />
+        <button id="up-pet-submit" type="submit">Update Pet</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="foods" class="foods-class" class="clearfix">
+    <div class="division">
+      <form id="create-food" class="create-food-class">
+        <input id="cr-food-name" name="brand_name" type="text" placeholder="brand name">
+        <br />
+        <input id="cr-food-main" name="main_ingredient" type="text" placeholder="main ingredient">
+        <br />
+        <input id="cr-food-second" name="secondary_ingredient" type="text" placeholder="secondary ingredient">
+        <br />
+        <input id="cr-food-petid" name="pet_id" type="text" placeholder="pet ID">
+        <br />
+        <input id="cr-food-score" name="score" type="text" placeholder="pet score: 1-10">
+        <br />
+        <button id="cr-food-submit" type="submit">Add Food For Pet</button>
+      </form>
+    </div>
+
+    <div class="division">
+      <form id="see-foods" class="see-foods-class">
+        <button id="see-foods-button" type="submit">My Pets Foods</button>
+      </form>
+      <br />
+      <form id="see-one-food" class="see-one-food-class">
+        <input id="see-food-id" name="id" type="text" placeholder="food ID">
+        <br />
+        <button id="see-food-button" type="submit">See One Food</button>
+      </form>
+    </div>
+
+    <div class="division">
+      <form id="delete-food" class="delete-food-class">
+        <input id="del-food-id" name="id" type="text" placeholder="food ID">
+        <br />
+        <button id="del-food-submit" type="submit">Remove</button>
+      </form>
+    </div>
+
+    <div class="division">
+      <form id="update-food" class="update-food-class">
+        <input id="up-food-id" name="id" type="text" placeholder="food ID">
+        <br />
+        <input id="up-food-brand_name" name="brand_name" type="text" placeholder="brand name">
+        <br />
+        <input id="up-food-main_ingredient" name="main_ingredient" type="text" placeholder="main ingredient">
+        <br />
+        <input id="up-food-secondary_ingredient" name="secondary_ingredient" type="text" placeholder="secondary ingredient">
+        <br />
+        <input id="up-food-score" name="score" type="text" placeholder="pet score: 1-10">
+        <br />
+        <button id="up-food-submit" type="submit">Update Food</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal end -->
+
+</body>
+
+</html>
