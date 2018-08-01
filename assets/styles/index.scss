@@ -60,11 +60,12 @@ img {
   align-items: center;
   // height: 10%;
   background-color: #d6d521;
-  padding: 5%;
+  padding: 1%;
 }
 
 #logoutbutton {
-  background-color: #1c1c1b;
+  // background-color: #1c1c1b;
+  background-color: red;
   border: none;
   color: #d6d521;
   padding: 5px 10px;
@@ -85,9 +86,9 @@ img {
   margin: 2% 2% 2% auto;
 }
 
-#logout-form {
-  display: inline;
-}
+// #logout-form {
+//   display: inline;
+// }
 
 #shelters {
   text-align: center;
@@ -116,7 +117,7 @@ legend {
   text-align: center;
   font-weight: bold;
   background-color: #1c1c1b;
-  padding: 5px;
+  padding: 2%;
 }
 
 .foods-class,
